@@ -247,7 +247,7 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in addr = {
         .sin_family = AF_INET,
         .sin_port = htons(8080),
-        .sin_addr.s_addr = INADDR_LOOPBACK
+        .sin_addr.s_addr = htonl(INADDR_LOOPBACK)
     };
 
     if (bind(sock, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
